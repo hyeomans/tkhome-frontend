@@ -5,9 +5,101 @@ body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #2D2D2D;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  padding-left: 17px;
+  margin-bottom: 38px;
+  background-color: #F4F4F4;
+  font-weight: 600;
+  font-size: .875rem;
+}
+
+section {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+figure {
+  position: relative;
+  margin-bottom: 3.125rem;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  right: 3%;
+  top: 4%;
+  height: 35px;
+}
+
+.listing-image {
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.listing-description {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.listing-price {
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+
+.listing-date {
+  font-size: .875rem;
+  color: #979797;
+}
+
+@media (min-width: 550px) {
+  section ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  section li {
+    flex-basis: 49.5%;
+  }
+  
+  /* figure img {
+    object-position: 0;
+  } */
+}
+
+@media (min-width: 800px) {
+  section li {
+    flex-basis: 32.5%;
+  }
+
+  nav {
+    height: 103px;
+    padding-left: 60px;
+    font-size: 1.75rem;
+  }
 }

@@ -1,39 +1,32 @@
-/**
- * Remove this content and start here
- */
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import PropertyListings from "PropertyListings";
 
-import heartFill from './assets/heart-fill.svg';
-import heartStroke from './assets/heart-stroke.svg';
+const Home = () => <>
+  <nav role="navigation">
+    Home
+  </nav>
+  <section>Visit our <Link to="/property-listings">property listings</Link></section>
+</>
 
 function App() {
   return (
-    <div
-      style={{
-        maxWidth: '70%',
-        padding: '1em',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        background: '#eee',
-      }}
-    >
-      <h1>Side React Take-home Assignment</h1>
-      <p>
-        Welcome to the Side React take-home assignment. This boilerplate is
-        intended to help get you started. It's already setup with the fonts and
-        SVG assets you will need to complete your assignment.
-      </p>
-      <p>
-        <em>
-          Be sure to read through the INSTRUCTIONS.md content before beginning.
-          Good luck!
-        </em>
-      </p>
-      <div>
-        <div>Here are the SVG assets you will need.</div>
-        <img src={heartFill} className="App-logo" alt="favorite icon" />
-        <img src={heartStroke} className="App-logo" alt="unfavorite icon" />
-      </div>
-    </div>
+    <Router>
+      <Switch>
+
+        <Route path="/property-listings">
+          <PropertyListings />
+        </Route>
+
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
